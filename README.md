@@ -1,2 +1,2 @@
-This is Web user interface to provide access to the deployed ML model for electricity load forecasting. It loads JSON data for multivariate dataset, sends it to the ML forecasting service on the Google Cloud Platform and display the results on the web page. It is developed using Flask and HTML
+This is Web user interface to provide access to the deployed ML model for electricity load forecasting. It loads JSON data for multivariate dataset, sends it to the ML forecasting service on the Google Cloud Platform and display the results on the web page. It is developed using Flask, HTML, CSS and JavaScript.
 The Web interface is deployed to AWS platform. 
