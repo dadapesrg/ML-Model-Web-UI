@@ -1,17 +1,21 @@
+# Inport necessary libraries
 from flask import Flask, render_template, request, jsonify
 import requests
 import os
 import json
 
+# Initialize the Flask app
 app = Flask(__name__)
 
-# Replace with your deployed model's Cloud Run URL
+# The URL of the deployed model's Cloud Run URL
 ML_MODEL_URL = "https://electricity-demand-forecasting-1010694068842.us-central1.run.app/predict"
 
+# Render the index page
 @app.route('/')
 def index():
     return render_template('index.html')
 
+# Route for making predictions
 @app.route('/predict', methods=['POST'])
 def predict():
     # Check if the post request has the file part
@@ -45,7 +49,7 @@ def predict():
 
     return jsonify({"error": "Invalid file format. Only JSON files are allowed."}), 400
 
-# Run the Flask app. This will start the server, only for development only.  
+# Run the Flask app. This will start the server.  
 if __name__ == '__main__':
     #app.run(debug=True) # for development
     app.run(host='0.0.0.0', port=8181) # to be used for production
